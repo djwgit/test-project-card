@@ -71,7 +71,7 @@ def create_project_card(token):
   #_data = {"content_id":1, "content_type":"Issue"}
 
   # try to add a note as a project card
-  _data = {"content", "just some notes here as a card"}
+  _data = {"note", "just some notes here as a card"}
 
   requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
   ret = requests.post(url=_url, headers=_headers, data=_data, verify=False)
