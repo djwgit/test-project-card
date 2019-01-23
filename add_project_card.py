@@ -69,13 +69,13 @@ def create_project_card(token):
 
   # try to add an issue as a project card. (there is an issue in the repo)
   # here need to be issue ID, not number
-  #_data = '{"content_id":1, "content_type":"Issue"}'
+  #_data = {"content_id":401878656, "content_type":"Issue"}
 
   # try to add a note as a project card
-  _data = '{"note", "just some notes here as a card"}'
+  _data = {"note", "just some notes here as a card"}
 
   requests.packages.urllib3.disable_warnings(category=InsecureRequestWarning)
-  ret = requests.post(url=_url, headers=_headers, data=_data, verify=False)
+  ret = requests.post(url=_url, headers=_headers, data=json.dump(_data), verify=False)
   if (not ret.ok):
     print("request failed")
     print(ret.content)
